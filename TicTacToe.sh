@@ -16,4 +16,23 @@ function createGameboard() {
         done
 }
 
+#UC-2 : Player randomly chooses X or O
+randomCheck=$((RANDOM%2))
+function assignLetter() {
+        if (( $randomCheck == 0 ))
+        then
+                player="X"
+                computer="O"
+        else
+                player="O"
+                computer="X"
+        fi
+
+        echo "Player has been assigned : " $player
+        echo "Computer has been assigned : " $computer
+
+}
+
+
 createGameboard
+assignLetter
